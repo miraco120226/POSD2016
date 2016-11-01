@@ -24,3 +24,12 @@ double Triangle::area() const {
 bool Triangle::islegal(){
     return area();
 }
+
+string Triangle::description() const {
+    stringstream ss;
+    ss << "t("
+        << ax << " " << ay << " "
+        << bx << " " << by << " "
+        << cx << " " << cy << ") ";
+    return ss.str();
+}

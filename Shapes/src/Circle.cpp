@@ -11,3 +11,12 @@ double Circle::perimeter() const{
 bool Circle::islegal() {
     return (r>0);
 }
+
+string Circle::description() const {
+    stringstream ss;
+    ss << "c("
+        << cx << " " << cy << " "
+        << r << ") ";
+    return ss.str();
+}
+

@@ -1,6 +1,10 @@
 #ifndef CIRCLE_H
 #define CIRCLE_H
 #include "Shapes.h"
+#include <string>
+#include <sstream>
+
+using namespace std;
 
 class Circle : public Shape{
 public:
@@ -9,6 +13,7 @@ public:
     double area()const;
     double perimeter() const;
     bool islegal();
+    string description() const;
 
 private:
     double cx,cy,r;

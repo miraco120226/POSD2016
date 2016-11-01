@@ -37,3 +37,11 @@ bool comboShapes::del(Shape* shape){
         return true;
     }
 }
+
+string comboShapes::description() const{
+    string d("");
+    for(Shape* s:shapes){
+        d+=s->description();
+    }
+    return d;
+};

@@ -16,6 +16,7 @@ class comboShapes : public Shape{
         bool islegal();
         void add(Shape* shape);
         bool del(Shape* shape);
+        string description() const;
 //    private:
         vector<Shape*> shapes;
 };

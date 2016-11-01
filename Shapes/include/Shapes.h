@@ -5,11 +5,13 @@
 using namespace std;
 
 class Shape {
-public:
-    virtual double area() const = 0;
-    virtual double perimeter() const = 0;
-    virtual bool islegal() = 0;
-    string name;
+
+    public:
+        virtual double area() const = 0;
+        virtual double perimeter() const = 0;
+        virtual bool islegal() = 0;
+        virtual string description() const = 0;
+        string name;
 };
 
 #endif // SHAPES_H

@@ -11,3 +11,11 @@ double Rectangle::perimeter() const{
 bool Rectangle::islegal(){
     return (l>0)&&(w>0);
 }
+
+string Rectangle::description() const {
+    stringstream ss;
+    ss << "r("
+        << x << " " << y << " "
+        << l << " " << w << ") ";
+    return ss.str();
+}

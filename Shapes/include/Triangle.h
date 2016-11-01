@@ -2,6 +2,10 @@
 #define TRIANGLE_H
 #include "Shapes.h"
 #include <math.h>
+#include <string>
+#include <sstream>
+
+using namespace std;
 
 class Triangle : public Shape{
 public:
@@ -13,6 +17,7 @@ public:
     double perimeter() const;
     double area() const;
     bool islegal();
+    string description() const;
 
 private:
     double ax,ay,bx,by,cx,cy;

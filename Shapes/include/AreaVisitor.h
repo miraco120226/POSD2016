@@ -3,13 +3,13 @@
 #include "MediaVisitor.h"
 
 class AreaVisitor : public MediaVisitor{
-public:
-    AreaVisitor (): area(0) {}
-    void visitShapeMedia(ShapeMedia *sm);
-    void visitComboMedia(ComboMedia *cm);
-    double getArea() const {return area;}
-private:
-    double area;
+    public:
+        AreaVisitor (): area(0) {}
+        void visitShapeMedia(ShapeMedia *sm);
+        void visitComboMedia(ComboMedia *cm);
+        double getArea() const {return area;}
+    private:
+        double area;
 };
 
 #endif // AREAVISITOR_H
