@@ -6,7 +6,8 @@ class AreaVisitor : public MediaVisitor{
     public:
         AreaVisitor (): area(0) {}
         void visitShapeMedia(ShapeMedia *sm);
-        void visitComboMedia(ComboMedia *cm);
+        void visitComboMediaPre(ComboMedia *cm);
+        void visitComboMediaPost(ComboMedia *cm);
         double getArea() const {return area;}
     private:
         double area;

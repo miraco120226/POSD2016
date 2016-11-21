@@ -397,7 +397,7 @@ TEST (TextMedia3, TextMedia) {
     CHECK(string("Test")==tm.getText()->getText())
 }
 
-TEST (removeMedia, removeMedia) {
+TEST (removeShapeMedia, removeMedia) {
     Rectangle rec1(10,0,15,5);
     Circle circ(12,5,2);
 
@@ -447,6 +447,54 @@ TEST (removeMedia, removeMedia) {
     CHECK(string("combo(combo(combo(r(10 0 15 5) c(12 5 2) ))t(0 20 16 32 25 20) )")==dv.getDescription());
 }
 
+TEST (removeComboMedia, removeMedia) {
+    Rectangle rec1(10,0,15,5);
+    Circle circ(12,5,2);
 
+    ShapeMediaBuilder smb;
+    smb.buildShapeMedia(&rec1);
+    ShapeMediaBuilder smb2;
+    smb2.buildShapeMedia(&circ);
+
+    ComboMediaBuilder cmb;
+    cmb.buildComboMedia();
+    cmb.buildAddShapeMedia((ShapeMedia*)smb.getMedia());
+    cmb.buildAddShapeMedia((ShapeMedia*)smb2.getMedia());
+
+
+    ComboMedia* cm=(ComboMedia*)cmb.getMedia();
+    Rectangle rec2(0,0,25,20);
+
+    ShapeMediaBuilder smb3;
+    smb3.buildShapeMedia(&rec2);
+
+    ComboMediaBuilder cmb2;
+    cmb2.buildComboMedia();
+    cmb2.buildAddComboMedia(cm);
+    cmb2.buildAddShapeMedia((ShapeMedia*)smb3.getMedia());
+
+
+    ComboMedia* cm2=(ComboMedia*)cmb2.getMedia();
+    Triangle tri(0,20,16,32,25,20);
+
+    ShapeMediaBuilder smb4;
+    smb4.buildShapeMedia(&tri);
+
+    ComboMediaBuilder cmb3;
+    cmb3.buildComboMedia();
+    cmb3.buildAddComboMedia(cm2);
+    cmb3.buildAddShapeMedia((ShapeMedia*)smb4.getMedia());
+
+    Rectangle rec3(0,0,25,20);
+    ShapeMediaBuilder smb5;
+    smb5.buildShapeMedia(&rec3);
+
+    ((ComboMedia*)cmb3.getMedia())->removeMedia(cm);
+
+    DescriptionVisitor dv;
+    ((ComboMedia*)cmb3.getMedia())->accept(&dv);
+
+    CHECK(string("combo(combo(r(0 0 25 20) )t(0 20 16 32 25 20) )")==dv.getDescription());
+}
 
 #endif // UTSHAPES_H_INCLUDED

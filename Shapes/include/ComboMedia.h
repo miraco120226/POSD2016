@@ -15,6 +15,7 @@ public:
     void accept(MediaVisitor * mv);
     void add (Media *m);
     void removeMedia (Media *m);
+    vector<Media*> getMedia();
 };
 
 #endif // COMBOMEDIA_H

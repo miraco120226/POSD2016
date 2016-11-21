@@ -9,7 +9,8 @@ class DescriptionVisitor : public MediaVisitor{
     public:
         DescriptionVisitor (): description(string("")) {}
         void visitShapeMedia(ShapeMedia *sm);
-        void visitComboMedia(ComboMedia *cm);
+        void visitComboMediaPre(ComboMedia *cm);
+        void visitComboMediaPost(ComboMedia *cm);
         string getDescription() const {return description;}
     private:
         string description;

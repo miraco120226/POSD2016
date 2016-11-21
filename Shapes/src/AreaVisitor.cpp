@@ -6,7 +6,12 @@ void AreaVisitor::visitShapeMedia(ShapeMedia *sm){
     area+=sm->getShape()->area();
 }
 
-void AreaVisitor::visitComboMedia(ComboMedia *cm){
+void AreaVisitor::visitComboMediaPre(ComboMedia *cm){
+
+
+}
+
+void AreaVisitor::visitComboMediaPost(ComboMedia *cm){
 
 
 }

@@ -6,7 +6,12 @@ void PerimeterVisitor::visitShapeMedia(ShapeMedia *sm){
     perimeter+=sm->getShape()->perimeter();
 }
 
-void PerimeterVisitor::visitComboMedia(ComboMedia *cm){
+void PerimeterVisitor::visitComboMediaPre(ComboMedia *cm){
+
+
+}
+
+void PerimeterVisitor::visitComboMediaPost(ComboMedia *cm){
 
 
 }

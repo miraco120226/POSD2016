@@ -7,6 +7,10 @@ void DescriptionVisitor::visitShapeMedia(ShapeMedia *sm){
     description+=sm->getShape()->description();
 }
 
-void DescriptionVisitor::visitComboMedia(ComboMedia *cm){
-    description="combo("+description+")";
+void DescriptionVisitor::visitComboMediaPre(ComboMedia *cm){
+    description+="combo(";
+}
+
+void DescriptionVisitor::visitComboMediaPost(ComboMedia *cm){
+    description+=")";
 }

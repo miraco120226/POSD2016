@@ -22,7 +22,7 @@
 
 1474792306 d:\posd2016\cppunitlite\testregistry.h
 
-1477987450 d:\posd2016\shapes\utshapes.h
+1478076987 d:\posd2016\shapes\utshapes.h
 	"..\cppunitlite\TestHarness.h"
 	"Shapes.h"
 	"Circle.h"
@@ -107,14 +107,14 @@
 	<algorithm>
 	"Shapes.h"
 
-1477904103 source:d:\posd2016\shapes\src\combomedia.cpp
+1478076526 source:d:\posd2016\shapes\src\combomedia.cpp
 	"ComboMedia.h"
 	"DescriptionVisitor.h"
 	<iostream>
 	<string>
 	<string.h>
 
-1477904109 d:\posd2016\shapes\include\combomedia.h
+1478076226 d:\posd2016\shapes\include\combomedia.h
 	<vector>
 	"Media.h"
 	"MediaVisitor.h"
@@ -134,27 +134,27 @@
 	"Media.h"
 	"Text.h"
 
-1476433538 d:\posd2016\shapes\include\mediavisitor.h
+1478076601 d:\posd2016\shapes\include\mediavisitor.h
 
 1476433534 source:d:\posd2016\shapes\src\mediavisitor.cpp
 	"MediaVisitor.h"
 	"ComboMedia.h"
 	"ShapeMedia.h"
 
-1476440178 source:d:\posd2016\shapes\src\areavisitor.cpp
+1478076651 source:d:\posd2016\shapes\src\areavisitor.cpp
 	"AreaVisitor.h"
 	"ShapeMedia.h"
 	"ComboMedia.h"
 
-1477646617 d:\posd2016\shapes\include\areavisitor.h
+1478076634 d:\posd2016\shapes\include\areavisitor.h
 	"MediaVisitor.h"
 
-1476440292 source:d:\posd2016\shapes\src\perimetervisitor.cpp
+1478076668 source:d:\posd2016\shapes\src\perimetervisitor.cpp
 	"PerimeterVisitor.h"
 	"ShapeMedia.h"
 	"ComboMedia.h"
 
-1477646605 d:\posd2016\shapes\include\perimetervisitor.h
+1478076630 d:\posd2016\shapes\include\perimetervisitor.h
 	"MediaVisitor.h"
 
 1477649151 source:d:\posd2016\shapes\src\mediabuilder.cpp
@@ -180,13 +180,13 @@
 1477648988 d:\posd2016\shapes\include\shapemediabuilder.h
 	"MediaBuilder.h"
 
-1477647913 source:d:\posd2016\shapes\src\descriptionvisitor.cpp
+1478076442 source:d:\posd2016\shapes\src\descriptionvisitor.cpp
 	"DescriptionVisitor.h"
 	"ShapeMedia.h"
 	"ComboMedia.h"
 	<iostream>
 
-1477647331 d:\posd2016\shapes\include\descriptionvisitor.h
+1478076454 d:\posd2016\shapes\include\descriptionvisitor.h
 	<string>
 	"MediaVisitor.h"
 

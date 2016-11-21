@@ -6,7 +6,8 @@ class PerimeterVisitor : public MediaVisitor{
     public:
         PerimeterVisitor (): perimeter(0) {}
         void visitShapeMedia(ShapeMedia *sm);
-        void visitComboMedia(ComboMedia *cm);
+        void visitComboMediaPre(ComboMedia *cm);
+        void visitComboMediaPost(ComboMedia *cm);
         double getPerimeter() const {return perimeter;}
     private:
         double perimeter;

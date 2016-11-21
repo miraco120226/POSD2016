@@ -20,10 +20,11 @@ double ComboMedia::perimeter( ) const {
 }
 
 void ComboMedia::accept(MediaVisitor * mv) {
+        mv->visitComboMediaPre(this);
         for(Media *m: media){
             m->accept(mv);
         }
-        mv->visitComboMedia(this);
+        mv->visitComboMediaPost(this);
 }
 
 void ComboMedia::add (Media *m) {
@@ -52,4 +53,7 @@ void ComboMedia::removeMedia (Media *m) {
         }
 }
 
+vector<Media*> ComboMedia::getMedia(){
+    return media;
+}
 
