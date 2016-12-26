@@ -12,5 +12,5 @@ void DescriptionVisitor::visitComboMediaPre(ComboMedia *cm){
 }
 
 void DescriptionVisitor::visitComboMediaPost(ComboMedia *cm){
-    description+=")";
+    description+=") ";
 }

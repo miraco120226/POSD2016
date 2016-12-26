@@ -20,6 +20,7 @@ double ComboMedia::perimeter( ) const {
 }
 
 void ComboMedia::accept(MediaVisitor * mv) {
+
         mv->visitComboMediaPre(this);
         for(Media *m: media){
             m->accept(mv);
@@ -46,11 +47,26 @@ void ComboMedia::removeMedia (Media *m) {
             if(dv2.getDescription().substr(0,5)=="combo"){
                 ((ComboMedia*)(*iter))->removeMedia(m);
             }
-
-            if(dv2.getDescription()==dv.getDescription()){
+            else if(dv2.getDescription()==dv.getDescription()){
                 --(iter=media.erase(iter));
             }
         }
+}
+bool ComboMedia::removeMediaByRef (Media *m) {
+        bool isExist=false;
+        for(vector<Media*>::iterator iter=media.begin();iter!=media.end();iter++){
+            DescriptionVisitor dv;
+            (*iter)->accept(&dv);
+
+            if(*iter==m){
+                --(iter=media.erase(iter));
+                isExist=true;
+            }
+            else if(dv.getDescription().substr(0,5)=="combo"){
+                isExist=((ComboMedia*)(*iter))->removeMediaByRef(m);
+            }
+        }
+        return isExist;
 }
 
 vector<Media*> ComboMedia::getMedia(){

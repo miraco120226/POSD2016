@@ -40,3 +40,17 @@ bool isLarger(const Shape* x,const Shape* y){
 void sortByDecreasingPerimeter(vector<Shape*> &shapes){
     sort(shapes.begin(),shapes.end(),isLarger);
 }
+
+void runGeometry(){
+    Geometry geo;
+
+    while (true){
+        try{
+            if(!geo.run())
+                break;
+        }
+        catch (string s){
+            cout<<s<<endl<<endl;
+        }
+    }
+}

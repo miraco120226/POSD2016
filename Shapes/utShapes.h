@@ -19,6 +19,11 @@
 #include "ShapeMediaBuilder.h"
 #include "ComboMediaBuilder.h"
 #include "TextMedia.h"
+#include "Document.h"
+#include "MyDocument.h"
+#include "MediaDirector.h"
+#include "Geometry.h"
+
 
 #include <vector>
 #include <math.h>
@@ -262,7 +267,7 @@ TEST (DescriptionVisitor, ComboMedia) {
 
     DescriptionVisitor dv;
     cm.accept(&dv);
-    CHECK(string("combo(t(0 0 3 0 0 4) c(0 0 2) r(0 0 2 3) )")==dv.getDescription());
+    CHECK(string("combo(t(0 0 3 0 0 4) c(0 0 2) r(0 0 2 3) ) ")==dv.getDescription());
 }
 
 TEST (Circle, ShapeMediaBuilder) {
@@ -320,7 +325,7 @@ TEST (house, ComboMediaBuilder) {
     DescriptionVisitor dv;
     cmb3.getMedia()->accept(&dv);
 
-    CHECK(string("combo(combo(combo(r(10 0 15 5) c(12 5 2) )r(0 0 25 20) )t(0 20 16 32 25 20) )")==dv.getDescription());
+    CHECK(string("combo(combo(combo(r(10 0 15 5) c(12 5 2) ) r(0 0 25 20) ) t(0 20 16 32 25 20) ) ")==dv.getDescription());
 }
 
 #include<stack>
@@ -367,7 +372,7 @@ TEST (house_stack, ComboMediaBuilder) {
     DescriptionVisitor dv;
     cm3->accept(&dv);
 
-    CHECK(string("combo(combo(combo(r(10 0 15 5) c(12 5 2) )r(0 0 25 20) )t(0 20 16 32 25 20) )")==dv.getDescription());
+    CHECK(string("combo(combo(combo(r(10 0 15 5) c(12 5 2) ) r(0 0 25 20) ) t(0 20 16 32 25 20) ) ")==dv.getDescription());
 }
 
 TEST (TextMedia1, TextMedia) {
@@ -444,7 +449,7 @@ TEST (removeShapeMedia, removeMedia) {
     DescriptionVisitor dv;
     ((ComboMedia*)cmb3.getMedia())->accept(&dv);
 
-    CHECK(string("combo(combo(combo(r(10 0 15 5) c(12 5 2) ))t(0 20 16 32 25 20) )")==dv.getDescription());
+    CHECK(string("combo(combo(combo(r(10 0 15 5) c(12 5 2) ) ) t(0 20 16 32 25 20) ) ")==dv.getDescription());
 }
 
 TEST (removeComboMedia, removeMedia) {
@@ -493,8 +498,83 @@ TEST (removeComboMedia, removeMedia) {
 
     DescriptionVisitor dv;
     ((ComboMedia*)cmb3.getMedia())->accept(&dv);
-
-    CHECK(string("combo(combo(r(0 0 25 20) )t(0 20 16 32 25 20) )")==dv.getDescription());
+    CHECK(string("combo(combo(combo(r(10 0 15 5) c(12 5 2) ) r(0 0 25 20) ) t(0 20 16 32 25 20) ) ")==dv.getDescription());
 }
+
+TEST (canOpenDocument, MyDocument) {
+    MyDocument md;
+    CHECK(md.canOpenDocument("myShape.txt"))
+}
+
+TEST (cannotOpenDocument, MyDocument) {
+    MyDocument md;
+    CHECK(!md.canOpenDocument(""))
+}
+
+TEST (readFile, MyDocument) {
+    MyDocument md;
+    CHECK(md.openDocument("myShape.txt")==string("combo(r(0 0 3 2) c(0 0 5) combo(r(0 0 5 4) c(0 0 10) )combo(r(0 1 8 7) c(0 1 10) ))"))
+}
+
+TEST (myComboShape, MediaDirector) {
+    MyDocument md;
+
+    MediaDirector mdir;
+    stack<MediaBuilder *> mb;
+    mdir.setMediaBuilder(&mb);
+    try{
+        mdir.concrete(md.openDocument("myShape.txt"));
+    }
+    catch(string s){
+        FAIL(s.c_str());
+    }
+
+    DescriptionVisitor dv;
+    mb.top()->getMedia()->accept(&dv);
+    CHECK(dv.getDescription()==string("combo(r(0 0 3 2) c(0 0 5) combo(r(0 0 5 4) c(0 0 10) ) combo(r(0 1 8 7) c(0 1 10) ) ) "))
+}
+
+TEST (myShape, MediaDirector) {
+    MediaDirector mdir;
+    stack<MediaBuilder *> mb;
+    mdir.setMediaBuilder(&mb);
+    try{
+        mdir.concrete("r(0 0 3 2) ");
+    }
+    catch(string s){
+        FAIL(s.c_str());
+    }
+
+    DescriptionVisitor dv;
+    mb.top()->getMedia()->accept(&dv);
+    CHECK(dv.getDescription()==string("r(0 0 3 2) "))
+}
+
+TEST (myShapeError, MediaDirector) {
+    MediaDirector mdir;
+    stack<MediaBuilder *> mb;
+    mdir.setMediaBuilder(&mb);
+    try{
+        mdir.concrete("rs(0s 0s s3 2)s ");
+        FAIL("input error!!");
+    }
+    catch(string s){
+        CHECK(s==string("input error!!"))
+    }
+}
+
+TEST (TriangleInputError, MediaDirector) {
+    MediaDirector mdir;
+    stack<MediaBuilder *> mb;
+    mdir.setMediaBuilder(&mb);
+    try{
+        mdir.concrete("t(0 0 0 0 0 0) ");
+        FAIL("input error!!");
+    }
+    catch(string s){
+        CHECK(s==string("input error!!"))
+    }
+}
+
 
 #endif // UTSHAPES_H_INCLUDED

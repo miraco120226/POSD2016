@@ -204,3 +204,300 @@
 	<string>
 	"Rectangle.h"
 
+1481108247 source:d:\posd\posd2016\shapes\main.cpp
+	"..\cppunitlite\TestHarness.h"
+	"utShapes.h"
+	"Functions.h"
+
+1474792306 d:\posd\posd2016\cppunitlite\testharness.h
+	"Test.h"
+	"TestResult.h"
+	"Failure.h"
+	"TestRegistry.h"
+
+1474792306 d:\posd\posd2016\cppunitlite\test.h
+	<cmath>
+	"SimpleString.h"
+
+1474792306 d:\posd\posd2016\cppunitlite\simplestring.h
+
+1474792306 d:\posd\posd2016\cppunitlite\testresult.h
+
+1474792306 d:\posd\posd2016\cppunitlite\failure.h
+	"SimpleString.h"
+
+1474792306 d:\posd\posd2016\cppunitlite\testregistry.h
+
+1481108556 d:\posd\posd2016\shapes\utshapes.h
+	"..\cppunitlite\TestHarness.h"
+	"Shapes.h"
+	"Circle.h"
+	"Rectangle.h"
+	"Triangle.h"
+	"Functions.h"
+	"comboShapes.h"
+	"Media.h"
+	"ShapeMedia.h"
+	"ComboMedia.h"
+	"MediaVisitor.h"
+	"AreaVisitor.h"
+	"PerimeterVisitor.h"
+	"DescriptionVisitor.h"
+	"MediaBuilder.h"
+	"ShapeMediaBuilder.h"
+	"ComboMediaBuilder.h"
+	"TextMedia.h"
+	"Document.h"
+	"MyDocument.h"
+	"MediaDirector.h"
+	"Geometry.h"
+	<vector>
+	<math.h>
+	<stack>
+
+1477971202 d:\posd\posd2016\shapes\include\shapes.h
+	<string>
+
+1477646450 d:\posd\posd2016\shapes\include\circle.h
+	"Shapes.h"
+	<string>
+	<sstream>
+
+1477646445 d:\posd\posd2016\shapes\include\rectangle.h
+	"Shapes.h"
+	<string>
+	<sstream>
+
+1477646143 d:\posd\posd2016\shapes\include\triangle.h
+	"Shapes.h"
+	<math.h>
+	<string>
+	<sstream>
+
+1481011271 d:\posd\posd2016\shapes\include\functions.h
+	<vector>
+	<iostream>
+	<algorithm>
+	"Shapes.h"
+	"Geometry.h"
+
+1477647727 d:\posd\posd2016\shapes\include\comboshapes.h
+	"Shapes.h"
+	"Functions.h"
+	<vector>
+
+1481093069 d:\posd\posd2016\shapes\include\media.h
+	<string>
+	"MediaVisitor.h"
+
+1478076601 d:\posd\posd2016\shapes\include\mediavisitor.h
+
+1481093178 d:\posd\posd2016\shapes\include\shapemedia.h
+	"Shapes.h"
+	"Media.h"
+	"Text.h"
+
+1477973221 d:\posd\posd2016\shapes\include\text.h
+	<string>
+	"Rectangle.h"
+
+1481019262 d:\posd\posd2016\shapes\include\combomedia.h
+	<vector>
+	"Media.h"
+	"MediaVisitor.h"
+
+1478076634 d:\posd\posd2016\shapes\include\areavisitor.h
+	"MediaVisitor.h"
+
+1478076630 d:\posd\posd2016\shapes\include\perimetervisitor.h
+	"MediaVisitor.h"
+
+1478076454 d:\posd\posd2016\shapes\include\descriptionvisitor.h
+	<string>
+	"MediaVisitor.h"
+
+1479799502 d:\posd\posd2016\shapes\include\mediabuilder.h
+	<Shapes.h>
+	<Media.h>
+
+1479799567 d:\posd\posd2016\shapes\include\shapemediabuilder.h
+	"MediaBuilder.h"
+
+1481001205 d:\posd\posd2016\shapes\include\combomediabuilder.h
+	"MediaBuilder.h"
+
+1477973362 d:\posd\posd2016\shapes\include\textmedia.h
+	"Media.h"
+	"Text.h"
+
+1478076651 source:d:\posd\posd2016\shapes\src\areavisitor.cpp
+	"AreaVisitor.h"
+	"ShapeMedia.h"
+	"ComboMedia.h"
+
+1477646435 source:d:\posd\posd2016\shapes\src\circle.cpp
+	"Circle.h"
+
+1481019749 source:d:\posd\posd2016\shapes\src\combomedia.cpp
+	"ComboMedia.h"
+	"DescriptionVisitor.h"
+	<iostream>
+	<string>
+	<string.h>
+
+1481001215 source:d:\posd\posd2016\shapes\src\combomediabuilder.cpp
+	"ComboMediaBuilder.h"
+	"ShapeMedia.h"
+	"ComboMedia.h"
+	<iostream>
+
+1477647886 source:d:\posd\posd2016\shapes\src\comboshapes.cpp
+	"comboShapes.h"
+
+1481107594 source:d:\posd\posd2016\shapes\src\descriptionvisitor.cpp
+	"DescriptionVisitor.h"
+	"ShapeMedia.h"
+	"ComboMedia.h"
+	<iostream>
+
+1481105744 source:d:\posd\posd2016\shapes\src\functions.cpp
+	"Functions.h"
+
+1481093112 source:d:\posd\posd2016\shapes\src\media.cpp
+	"Media.h"
+
+1479799702 source:d:\posd\posd2016\shapes\src\mediabuilder.cpp
+	"MediaBuilder.h"
+
+1476433534 source:d:\posd\posd2016\shapes\src\mediavisitor.cpp
+	"MediaVisitor.h"
+	"ComboMedia.h"
+	"ShapeMedia.h"
+
+1478076668 source:d:\posd\posd2016\shapes\src\perimetervisitor.cpp
+	"PerimeterVisitor.h"
+	"ShapeMedia.h"
+	"ComboMedia.h"
+
+1477646398 source:d:\posd\posd2016\shapes\src\rectangle.cpp
+	"Rectangle.h"
+
+1481093191 source:d:\posd\posd2016\shapes\src\shapemedia.cpp
+	"ShapeMedia.h"
+	<iostream>
+
+1479799569 source:d:\posd\posd2016\shapes\src\shapemediabuilder.cpp
+	"ShapeMediaBuilder.h"
+	<ShapeMedia.h>
+
+1477647610 source:d:\posd\posd2016\shapes\src\shapes.cpp
+	"Shapes.h"
+
+1477973218 source:d:\posd\posd2016\shapes\src\text.cpp
+	"Text.h"
+
+1477973458 source:d:\posd\posd2016\shapes\src\textmedia.cpp
+	"TextMedia.h"
+
+1477646403 source:d:\posd\posd2016\shapes\src\triangle.cpp
+	"Triangle.h"
+
+1479713312 source:d:\posd\posd2016\shapes\src\document.cpp
+	"Document.h"
+
+1479713335 d:\posd\posd2016\shapes\include\document.h
+	<string>
+
+1479716139 source:d:\posd\posd2016\shapes\src\mydocument.cpp
+	"MyDocument.h"
+
+1479715257 d:\posd\posd2016\shapes\include\mydocument.h
+	<string>
+	<iostream>
+	<fstream>
+	<io.h>
+	"Document.h"
+
+1481018354 source:d:\posd\posd2016\shapes\src\mediadirector.cpp
+	"MediaDirector.h"
+
+1479720420 d:\posd\posd2016\shapes\include\mediadirector.h
+	"MediaBuilder.h"
+	"ComboMediaBuilder.h"
+	"ShapeMediaBuilder.h"
+	"Shapes.h"
+	"Circle.h"
+	"Rectangle.h"
+	"Triangle.h"
+	"comboShapes.h"
+	"Media.h"
+	"ShapeMedia.h"
+	"ComboMedia.h"
+	<stack>
+	<sstream>
+	<iostream>
+
+1481103187 d:\posd\posd2016\shapes\include\geometry.h
+	<iostream>
+	<map>
+	<sstream>
+	<fstream>
+	<io.h>
+	"Media.h"
+	"MediaDirector.h"
+	"AreaVisitor.h"
+	"PerimeterVisitor.h"
+	"GeometryVisitor.h"
+	"DescriptionVisitor.h"
+	"FillMapVisitor.h"
+	"GeometryDirector.h"
+
+1481107217 source:d:\posd\posd2016\shapes\src\geometry.cpp
+	"Geometry.h"
+
+1481107376 d:\posd\posd2016\shapes\include\geometryvisitor.h
+	"MediaVisitor.h"
+	"Media.h"
+	<map>
+	<string>
+	<sstream>
+	<iostream>
+
+1481107485 source:d:\posd\posd2016\shapes\src\geometryvisitor.cpp
+	"GeometryVisitor.h"
+
+1481089384 source:d:\posd\posd2016\shapes\src\fillmapvisitor.cpp
+	"FillMapVisitor.h"
+
+1481085048 d:\posd\posd2016\shapes\include\fillmapvisitor.h
+	<iostream>
+	<map>
+	<string>
+	<sstream>
+	"MediaVisitor.h"
+	"DescriptionVisitor.h"
+	"Media.h"
+	"ShapeMedia.h"
+	"ComboMedia.h"
+
+1481105260 source:d:\posd\posd2016\shapes\src\geometrydirector.cpp
+	"GeometryDirector.h"
+
+1481098674 d:\posd\posd2016\shapes\include\geometrydirector.h
+	<stack>
+	<map>
+	<vector>
+	<sstream>
+	<iostream>
+	"MediaBuilder.h"
+	"ComboMediaBuilder.h"
+	"ShapeMediaBuilder.h"
+	"Shapes.h"
+	"Circle.h"
+	"Rectangle.h"
+	"Triangle.h"
+	"comboShapes.h"
+	"Media.h"
+	"ShapeMedia.h"
+	"ComboMedia.h"
+

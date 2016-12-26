@@ -5,8 +5,6 @@
 #include "MediaVisitor.h"
 
 class ComboMedia : public Media {
-private:
-    std::vector<Media*> media;
 public:
     ComboMedia( std::vector<Media*> m ) : media(m) {}
     ComboMedia() {}
@@ -15,7 +13,11 @@ public:
     void accept(MediaVisitor * mv);
     void add (Media *m);
     void removeMedia (Media *m);
+    bool removeMediaByRef (Media *m);
     vector<Media*> getMedia();
+
+private:
+    std::vector<Media*> media;
 };
 
 #endif // COMBOMEDIA_H

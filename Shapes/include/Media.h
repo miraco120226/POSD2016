@@ -13,6 +13,8 @@ public :
     virtual double perimeter() const = 0 ;
     virtual void accept(MediaVisitor * mv) = 0;
     virtual void add(Media * m);
+    virtual void removeMedia (Media *m);
+    virtual bool removeMediaByRef (Media *m);
 };
 
 #endif // MEDIA_H

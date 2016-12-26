@@ -20,6 +20,10 @@ void ComboMediaBuilder::buildAddComboMedia(ComboMedia* cmi){
     cm->add(cmi);
 };
 
+void ComboMediaBuilder::buildAddMedia(Media* m){
+    cm->add(m);
+};
+
 Media* ComboMediaBuilder::getMedia(){
     return cm;
 };
